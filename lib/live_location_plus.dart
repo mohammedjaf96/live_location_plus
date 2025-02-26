@@ -1,3 +1,3 @@
 library;
 
-export 'src/controllers/liveLocationService.dart';
+export 'src/controllers/live_location_service.dart';

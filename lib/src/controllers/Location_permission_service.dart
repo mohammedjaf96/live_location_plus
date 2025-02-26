@@ -1,10 +1,8 @@
-import 'dart:io';
 
-import 'package:flutter/services.dart';
 import 'package:location/location.dart';
 import 'package:permission_handler/permission_handler.dart' as permission_handler;
 
-import '../permissionExceptions/permissionException.dart';
+import '../permissionExceptions/permission_exception.dart';
 
 class LocationPermissionService {
 
@@ -126,7 +124,7 @@ class LocationPermissionService {
       serviceEnabled = await location.requestService();
     }
     // if null return false, by default
-    return serviceEnabled ?? false;
+    return serviceEnabled;
   }
 
 

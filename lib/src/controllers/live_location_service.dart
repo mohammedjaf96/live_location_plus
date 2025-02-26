@@ -1,8 +1,8 @@
 import 'dart:math';
-import 'package:live_location_plus/src/controllers/LocationPermissionService.dart';
-import 'package:live_location_plus/src/models/locationData.dart';
+import 'package:live_location_plus/src/controllers/Location_permission_service.dart';
+import 'package:live_location_plus/src/models/location_data.dart';
 import 'package:location/location.dart';
-import '../permissionExceptions/permissionException.dart';
+import '../permissionExceptions/permission_exception.dart';
 import 'dart:async';
 
 
