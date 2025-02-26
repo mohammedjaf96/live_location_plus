@@ -1,0 +1,22 @@
+name: live_location_plus
+description: "A Flutter package for real-time location tracking with foreground and background updates, built-in permission handling, and battery optimization."
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: ^3.7.0
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  location: ^8.0.0
+  permission_handler: ^11.4.0
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+
