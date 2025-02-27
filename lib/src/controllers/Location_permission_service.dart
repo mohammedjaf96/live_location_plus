@@ -24,9 +24,9 @@ class LocationPermissionService {
     }
 
     if (status == PermissionStatus.granted) {
-      throw PermissionException("Current location permission status is granted", true);
+      return PermissionException("Current location permission status is granted", true);
     } else {
-      throw PermissionException("Current location permission status is denied", false);
+      return PermissionException("Current location permission status is denied", false);
     }
 
   }
@@ -50,20 +50,20 @@ class LocationPermissionService {
           locationAlwaysStatus = e;
         });
       }
-      if(locationAlwaysStatus == permission_handler.PermissionStatus.permanentlyDenied){
+      if(await permission_handler.Permission.locationAlways.isPermanentlyDenied){
         await permission_handler.openAppSettings().then((e) async {
           locationAlwaysStatus = await permission_handler.Permission.locationAlways.status;
         });
       }
       foregroundLiveLocationStatus = locationAlwaysStatus == permission_handler.PermissionStatus.granted;
       if (foregroundLiveLocationStatus) {
-        throw PermissionException("location always permission status is granted", true);
+        return PermissionException("location always permission status is granted", true);
       } else {
-        throw PermissionException("location always permission status is denied", false);
+        return PermissionException("location always permission status is denied", false);
       }
     }
     else{
-      throw PermissionException("location always permission status is denied", false);
+      return PermissionException("location always permission status is denied", false);
     }
 
 
@@ -75,9 +75,9 @@ class LocationPermissionService {
 
     await location.enableBackgroundMode(enable: value);
     if (value) {
-      throw PermissionException("Background location turn on", value);
+      return PermissionException("Background location turn on", value);
     } else {
-      throw PermissionException("Background location turn off", value);
+      return PermissionException("Background location turn off", value);
     }
 
   }
@@ -93,20 +93,19 @@ class LocationPermissionService {
       if(currentLocation){
         PermissionException currentLocationPermissionHandler = await requestPermissionForCurrentLocation();
         if(currentLocationPermissionHandler.isGranted){
-
           if(foregroundLiveLocation){
             await requestPermissionForForegroundLiveLocation();
           }
           await changePermissionForBackgroundLiveLocation(backgroundLiveLocation);
-          throw PermissionException("Permission status is granted", true);
+          return PermissionException("Permission status is granted", true);
         }else{
-          throw currentLocationPermissionHandler;
+          return currentLocationPermissionHandler;
         }
       }else{
-        throw PermissionException("Permission status is denied", false);
+        return PermissionException("Permission status is denied", false);
       }
     }else{
-      throw PermissionException("Location services are disabled.", false);
+      return PermissionException("Location services are disabled.", false);
     }
   }
 

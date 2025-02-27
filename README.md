@@ -30,9 +30,7 @@ To enable background location updates, add the following to your **Info.plist** 
 </array>
 
 
-## Getting Started
 
-To install, add it to your `pubspec.yaml` file:
 
 ```
 dependencies:

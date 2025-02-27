@@ -1,6 +1,6 @@
 name: live_location_plus
 description: "A Flutter package for real-time location tracking with foreground and background updates, built-in permission handling, and battery optimization."
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/mohammedjaf96/live_location_plus.git
 repository: https://github.com/mohammedjaf96/live_location_plus.git
 
