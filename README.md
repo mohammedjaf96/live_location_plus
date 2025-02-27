@@ -28,6 +28,14 @@ To enable background location updates, add the following to your **Info.plist** 
     <string>location</string>
     <string>processing</string>
 </array>
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>write your description to using location</string>
+<key>NSLocationAlwaysUsageDescription</key>
+<string>write your description to using location</string>
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>write your description to using location</string>
+
+
 
 
 
@@ -38,7 +46,6 @@ dependencies:
 
 ```
 
-```dart
 import 'package:live_location_plus/live_location_plus.dart';
 ```
 
